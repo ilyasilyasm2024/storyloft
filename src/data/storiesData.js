@@ -14,7 +14,7 @@
  *    cover       – cover image URL (portrait, ~2:3 ratio, 800×1200 recommended)
  *    summary     – 1–2 sentence teaser for the home page card
  *    description – full description for the story details page
- *    lang        – optional, "ar" for Arabic (switches the reader to right-to-left)
+ *    lang        – language code of the text (the whole site is Arabic / right-to-left)
  *    chapters    – EXACTLY 12 items: { title, content }
  *
  *  Chapter content is plain text. Separate paragraphs with a blank line.

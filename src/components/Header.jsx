@@ -14,7 +14,7 @@ export default function Header() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-500 text-white shadow-sm shadow-amber-500/40">
             <BookIcon width={18} height={18} />
           </span>
-          Inkwell
+          Storyloft
         </Link>
         <ThemeToggle />
       </div>

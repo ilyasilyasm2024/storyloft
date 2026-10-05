@@ -5,7 +5,7 @@ export default function GenreFilter({ genres, selected, onSelect }) {
   return (
     <div
       role="radiogroup"
-      aria-label="Filter by genre"
+      aria-label="تصفية حسب النوع"
       className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 py-1 sm:mx-0 sm:flex-wrap sm:px-0"
     >
       {options.map((genre) => {
@@ -23,7 +23,7 @@ export default function GenreFilter({ genres, selected, onSelect }) {
                 : "bg-white text-stone-600 ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:text-stone-300 dark:ring-stone-800 dark:hover:bg-stone-800"
             }`}
           >
-            {genre}
+            {genre === "All" ? "الكل" : genre}
           </button>
         );
       })}

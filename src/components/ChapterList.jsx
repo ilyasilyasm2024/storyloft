@@ -6,19 +6,19 @@ import { chapterPath, isFreeChapter } from "../utils/chapters.js";
 function AccessBadge({ free, unlocked }) {
   if (free)
     return (
-      <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold tracking-wide text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
-        FREE
+      <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
+        مجاني
       </span>
     );
   if (unlocked)
     return (
-      <span className="rounded-full bg-sky-100 px-2.5 py-1 text-[11px] font-bold tracking-wide text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
-        🔓 UNLOCKED
+      <span className="rounded-full bg-sky-100 px-2.5 py-1 text-xs font-bold text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
+        🔓 مفتوح
       </span>
     );
   return (
-    <span className="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold tracking-wide text-amber-800 dark:bg-amber-500/15 dark:text-amber-300">
-      🔒 LOCKED
+    <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-bold text-amber-800 dark:bg-amber-500/15 dark:text-amber-300">
+      🔒 مقفول
     </span>
   );
 }
@@ -43,10 +43,10 @@ export default function ChapterList({ story }) {
                 {number}
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-[11px] font-medium uppercase tracking-wider text-stone-400">
-                  Chapter {number}
+                <span className="block text-xs font-medium text-stone-400">
+                  الفصل {number}
                 </span>
-                <span dir="auto" className="block truncate font-medium">{chapter.title}</span>
+                <span className="block truncate font-medium">{chapter.title}</span>
               </span>
               <AccessBadge free={free} unlocked={!free && isUnlocked(story.id, number)} />
             </Link>

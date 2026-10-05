@@ -5,6 +5,9 @@ import GenreFilter from "../components/GenreFilter.jsx";
 import StoryCard from "../components/StoryCard.jsx";
 import { getAllGenres, stories } from "../data/storiesData.js";
 
+/** "قصة واحدة" / "قصتان" / "3 قصص" / "11 قصة" — Arabic counting rules. */
+const storyCount = (n) => (n === 1 ? "قصة واحدة" : n === 2 ? "قصتان" : n <= 10 ? `${n} قصص` : `${n} قصة`);
+
 export default function Home() {
   // Search + genre live in the URL (?q=&genre=) so they survive Back navigation.
   const [params, setParams] = useSearchParams();
@@ -36,14 +39,14 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4">
       <section className="pb-6 pt-8 sm:pb-10 sm:pt-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
-          {stories.length} stories · new chapters every week
+        <p className="text-sm font-semibold text-amber-600 dark:text-amber-400">
+          {storyCount(stories.length)} · فصول جديدة كل أسبوع
         </p>
-        <h1 className="mt-2 max-w-2xl text-balance font-serif text-3xl font-semibold leading-tight sm:text-5xl">
-          Stories worth staying up for.
+        <h1 className="mt-2 max-w-2xl text-balance font-serif text-3xl font-bold leading-snug sm:text-5xl">
+          قصص تستحق السهر.
         </h1>
         <p className="mt-3 max-w-xl text-stone-600 dark:text-stone-400">
-          The first four chapters of every story are free. Pick one and start reading.
+          أول أربعة فصول من كل قصة مجانية. اختر قصتك وابدأ القراءة.
         </p>
 
         <div className="mt-6 space-y-3">
@@ -63,13 +66,13 @@ export default function Home() {
       ) : (
         <div className="rounded-2xl border border-dashed border-stone-300 px-6 py-16 text-center dark:border-stone-700">
           <p className="text-4xl">📚</p>
-          <p className="mt-3 font-medium">No stories match your search.</p>
+          <p className="mt-3 font-medium">لا توجد قصص تطابق بحثك.</p>
           <button
             type="button"
             onClick={() => setParams({}, { replace: true })}
             className="mt-4 rounded-full bg-stone-900 px-5 py-2 text-sm font-medium text-white dark:bg-amber-400 dark:text-stone-950"
           >
-            Clear filters
+            مسح البحث
           </button>
         </div>
       )}

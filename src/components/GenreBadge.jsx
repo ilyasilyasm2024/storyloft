@@ -8,10 +8,13 @@ const GENRE_STYLES = {
 };
 const FALLBACK = "bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-200";
 
-export default function GenreBadge({ genre, className = "" }) {
+/** Solid, high-contrast style for badges placed on top of cover images. */
+const OVERLAY = "bg-white/90 text-stone-900 shadow-sm backdrop-blur-sm";
+
+export default function GenreBadge({ genre, overlay = false, className = "" }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${GENRE_STYLES[genre] ?? FALLBACK} ${className}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${overlay ? OVERLAY : (GENRE_STYLES[genre] ?? FALLBACK)} ${className}`}
     >
       {genre}
     </span>

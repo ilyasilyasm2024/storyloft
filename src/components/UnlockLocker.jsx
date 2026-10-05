@@ -31,10 +31,10 @@ export default function UnlockLocker({ directLink, onUnlock, requiredClicks = CL
         className="animate-pop w-full max-w-sm rounded-3xl bg-white p-6 text-center shadow-2xl ring-1 ring-stone-200 dark:bg-stone-900 dark:ring-stone-800 sm:p-8"
       >
         <h2 id="locker-title" className="font-serif text-xl font-semibold sm:text-2xl">
-          🔒 This Chapter is Locked!
+          🔒 هذا الفصل مقفول!
         </h2>
         <p id="locker-desc" className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-          Complete {requiredClicks} clicks to unlock.
+          أكمل {requiredClicks} نقرات لفتحه.
         </p>
 
         {/* Step progress */}
@@ -50,7 +50,7 @@ export default function UnlockLocker({ directLink, onUnlock, requiredClicks = CL
         </div>
 
         <p aria-live="polite" className="mt-3 text-sm font-medium text-stone-700 dark:text-stone-200">
-          Remaining Clicks:{" "}
+          النقرات المتبقية:{" "}
           <span key={remaining} className="inline-block animate-pop text-lg font-bold tabular-nums text-amber-600 dark:text-amber-400">
             {remaining}
           </span>
@@ -61,11 +61,11 @@ export default function UnlockLocker({ directLink, onUnlock, requiredClicks = CL
           onClick={handleUnlockClick}
           className="mt-5 w-full rounded-2xl bg-amber-500 px-5 py-3.5 text-base font-semibold text-white shadow-lg shadow-amber-500/30 transition hover:bg-amber-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-400/50 active:scale-[0.98]"
         >
-          🔓 Unlock Chapter
+          🔓 افتح الفصل
         </button>
 
         <p className="mt-3 text-xs leading-relaxed text-stone-400">
-          Each click opens a sponsor page in a new tab. Unlocked chapters stay unlocked on this device.
+          كل نقرة تفتح صفحة الراعي في تبويب جديد. الفصول التي تفتحها تبقى مفتوحة على هذا الجهاز.
         </p>
       </div>
     </div>

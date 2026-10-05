@@ -14,7 +14,7 @@ export default function ChapterPage() {
   const story = getStoryById(storyId);
   const number = Number(chapterNumber);
   if (!story || !Number.isInteger(number) || number < 1 || number > story.chapters.length) {
-    return <NotFound message="That chapter doesn't exist." />;
+    return <NotFound message="هذا الفصل غير موجود." />;
   }
 
   const locked = !isUnlocked(story.id, number);
