@@ -1,5 +1,8 @@
 import { FREE_CHAPTER_COUNT } from "../config.js";
 
+/** Text direction for a story: "rtl" for Arabic stories (lang: "ar"), else "ltr". */
+export const storyDir = (story) => (story.lang === "ar" ? "rtl" : "ltr");
+
 /** Chapters 1–4 are free to read. */
 export const isFreeChapter = (chapterNumber) => chapterNumber <= FREE_CHAPTER_COUNT;
 

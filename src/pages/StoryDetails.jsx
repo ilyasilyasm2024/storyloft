@@ -6,7 +6,7 @@ import { ChevronLeftIcon } from "../components/Icons.jsx";
 import NotFound from "./NotFound.jsx";
 import { getStoryById } from "../data/storiesData.js";
 import { FREE_CHAPTER_COUNT } from "../config.js";
-import { chapterPath } from "../utils/chapters.js";
+import { chapterPath, storyDir } from "../utils/chapters.js";
 
 export default function StoryDetails() {
   const { storyId } = useParams();
@@ -42,14 +42,14 @@ export default function StoryDetails() {
 
             <div className="text-center sm:text-left">
               <GenreBadge genre={story.genre} />
-              <h1 className="mt-3 text-balance font-serif text-3xl font-semibold leading-tight sm:text-5xl">
+              <h1 dir={storyDir(story)} className="mt-3 text-balance font-serif text-3xl font-semibold leading-tight sm:text-5xl">
                 {story.title}
               </h1>
               <p className="mt-2 text-stone-600 dark:text-stone-300">
                 by <span className="font-semibold text-stone-900 dark:text-white">{story.author}</span>
               </p>
 
-              <ul className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start" aria-label="Tags">
+              <ul dir={storyDir(story)} className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start" aria-label="Tags">
                 {story.tags.map((tag) => (
                   <li
                     key={tag}
@@ -82,7 +82,7 @@ export default function StoryDetails() {
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
           <section>
             <h2 className="font-serif text-xl font-semibold">About this story</h2>
-            <p className="mt-3 leading-relaxed text-stone-700 dark:text-stone-300">{story.description}</p>
+            <p dir={storyDir(story)} className="mt-3 leading-relaxed text-stone-700 dark:text-stone-300">{story.description}</p>
           </section>
 
           <section>

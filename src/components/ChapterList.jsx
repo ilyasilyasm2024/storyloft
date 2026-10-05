@@ -46,7 +46,7 @@ export default function ChapterList({ story }) {
                 <span className="block text-[11px] font-medium uppercase tracking-wider text-stone-400">
                   Chapter {number}
                 </span>
-                <span className="block truncate font-medium">{chapter.title}</span>
+                <span dir="auto" className="block truncate font-medium">{chapter.title}</span>
               </span>
               <AccessBadge free={free} unlocked={!free && isUnlocked(story.id, number)} />
             </Link>

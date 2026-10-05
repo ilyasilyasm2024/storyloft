@@ -19,7 +19,7 @@ export default function ReaderToolbar({ story, chapterNumber, font }) {
         >
           <ChevronLeftIcon className="shrink-0" />
           <span className="min-w-0">
-            <span className="block truncate font-medium">{story.title}</span>
+            <span dir="auto" className="block truncate font-medium">{story.title}</span>
             <span className="block text-xs text-stone-400">Chapter {chapterNumber}</span>
           </span>
         </Link>

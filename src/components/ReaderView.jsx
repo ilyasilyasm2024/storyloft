@@ -5,7 +5,7 @@ import ChapterNav from "./ChapterNav.jsx";
 import SuggestedStories from "./SuggestedStories.jsx";
 import { useFontSize } from "../hooks/useReaderPrefs.js";
 import { useUnlockedChapters } from "../hooks/useUnlockedChapters.js";
-import { chapterPath, splitParagraphs } from "../utils/chapters.js";
+import { chapterPath, splitParagraphs, storyDir } from "../utils/chapters.js";
 
 /**
  * The reading interface.
@@ -19,6 +19,12 @@ export default function ReaderView({ story, chapterNumber, locked, children }) {
   const { isUnlocked } = useUnlockedChapters();
   const navigate = useNavigate();
   const paragraphs = useMemo(() => splitParagraphs(chapter.content), [chapter.content]);
+  const dir = storyDir(story);
+  const isRTL = dir === "rtl";
+  // Arabic script needs a bit more line height; the drop cap only suits Latin text.
+  const leading = isRTL ? "leading-[2.1]" : "leading-[1.85]";
+  const dropCap =
+    "first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-[3.4em] first-letter:leading-[0.85] first-letter:font-semibold first-letter:text-amber-600 dark:first-letter:text-amber-400";
 
   // ← / → keyboard shortcuts for desktop readers.
   useEffect(() => {
@@ -35,7 +41,7 @@ export default function ReaderView({ story, chapterNumber, locked, children }) {
     <div className="pb-16">
       <ReaderToolbar story={story} chapterNumber={chapterNumber} font={font} />
 
-      <article className="mx-auto max-w-2xl px-5 pt-10 sm:px-6 sm:pt-14">
+      <article dir={dir} lang={story.lang ?? "en"} className="mx-auto max-w-2xl px-5 pt-10 sm:px-6 sm:pt-14">
         <header className="mb-10 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
             Chapter {chapterNumber} of {total}
@@ -53,18 +59,18 @@ export default function ReaderView({ story, chapterNumber, locked, children }) {
           {locked ? (
             // Teaser only: first paragraph, blurred and non-interactive.
             <div aria-hidden="true" className="pointer-events-none min-h-[30rem] select-none blur-[5px]">
-              <p className="font-serif leading-[1.85] text-stone-800 dark:text-stone-200" style={{ fontSize: font.fontSize }}>
+              <p className={`font-serif ${leading} text-stone-800 dark:text-stone-200`} style={{ fontSize: font.fontSize }}>
                 {paragraphs[0]}
               </p>
             </div>
           ) : (
             <div
               key={`${story.id}-${chapterNumber}`}
-              className="animate-fade-in space-y-[1.15em] font-serif leading-[1.85] text-stone-800 transition-[font-size] duration-200 dark:text-stone-200"
+              className={`animate-fade-in space-y-[1.15em] font-serif ${leading} text-stone-800 transition-[font-size] duration-200 dark:text-stone-200`}
               style={{ fontSize: font.fontSize }}
             >
               {paragraphs.map((text, i) => (
-                <p key={i} className={i === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-[3.4em] first-letter:leading-[0.85] first-letter:font-semibold first-letter:text-amber-600 dark:first-letter:text-amber-400" : ""}>
+                <p key={i} className={i === 0 && !isRTL ? dropCap : ""}>
                   {text}
                 </p>
               ))}

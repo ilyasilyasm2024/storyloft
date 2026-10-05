@@ -18,7 +18,7 @@ export default function ChapterNav({ story, chapterNumber, isUnlocked }) {
           <ChevronLeftIcon className="shrink-0 text-stone-400 transition group-hover:-translate-x-0.5" />
           <span className="min-w-0">
             <span className="block text-xs text-stone-400">Previous</span>
-            <span className="block truncate text-sm font-medium">{story.chapters[prev - 1].title}</span>
+            <span dir="auto" className="block truncate text-sm font-medium">{story.chapters[prev - 1].title}</span>
           </span>
         </Link>
       ) : (
@@ -31,7 +31,7 @@ export default function ChapterNav({ story, chapterNumber, isUnlocked }) {
             <span className="block text-xs text-stone-400">
               Next {isUnlocked(story.id, next) ? "" : "🔒"}
             </span>
-            <span className="block truncate text-sm font-medium">{story.chapters[next - 1].title}</span>
+            <span dir="auto" className="block truncate text-sm font-medium">{story.chapters[next - 1].title}</span>
           </span>
           <ChevronRightIcon className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5" />
         </Link>

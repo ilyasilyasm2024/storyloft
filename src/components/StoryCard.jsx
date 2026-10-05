@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import GenreBadge from "./GenreBadge.jsx";
-import { storyPath } from "../utils/chapters.js";
+import { storyDir, storyPath } from "../utils/chapters.js";
 
 /** Cover card used in the home page grid. */
 export default function StoryCard({ story }) {
@@ -23,7 +23,7 @@ export default function StoryCard({ story }) {
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-3 sm:p-4">
+      <div dir={storyDir(story)} className="flex flex-1 flex-col gap-1 p-3 sm:p-4">
         <h3 className="line-clamp-2 font-serif text-[15px] font-semibold leading-snug sm:text-lg">
           {story.title}
         </h3>

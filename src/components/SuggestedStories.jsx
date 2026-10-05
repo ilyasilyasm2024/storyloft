@@ -34,7 +34,7 @@ export default function SuggestedStories({ storyId, variant = "sidebar", limit =
                 />
                 <GenreBadge genre={story.genre} className="absolute left-2 top-2 text-[10px]" />
               </div>
-              <p className="mt-2 line-clamp-2 font-serif text-sm font-semibold leading-snug">{story.title}</p>
+              <p dir="auto" className="mt-2 line-clamp-2 font-serif text-sm font-semibold leading-snug">{story.title}</p>
               <p className="text-xs text-stone-500 dark:text-stone-400">{story.author}</p>
             </Link>
           ))}
@@ -60,7 +60,7 @@ export default function SuggestedStories({ storyId, variant = "sidebar", limit =
                 className="aspect-[2/3] w-14 shrink-0 rounded-lg object-cover shadow-sm ring-1 ring-black/5"
               />
               <span className="min-w-0 py-0.5">
-                <span className="line-clamp-2 font-serif text-sm font-semibold leading-snug group-hover:text-amber-700 dark:group-hover:text-amber-400">
+                <span dir="auto" className="line-clamp-2 font-serif text-sm font-semibold leading-snug group-hover:text-amber-700 dark:group-hover:text-amber-400">
                   {story.title}
                 </span>
                 <span className="mt-0.5 block truncate text-xs text-stone-500 dark:text-stone-400">{story.author}</span>
