@@ -21,7 +21,7 @@ export default function ChapterPage() {
   // Shared analytics parameters for every event about this chapter.
   const eventParams = valid ? { story_id: story.id, story_title: story.title, chapter_number: number } : null;
 
-  useDocumentTitle(valid ? `${story.chapters[number - 1].title} · ${story.title}` : "صفحة غير موجودة");
+  useDocumentTitle(valid ? `الفصل ${number}: ${story.chapters[number - 1].title} · ${story.title}` : "صفحة غير موجودة");
 
   // One chapter_view per chapter opened. `locked` is read at that moment on purpose,
   // so unlocking doesn't count as a second view.
