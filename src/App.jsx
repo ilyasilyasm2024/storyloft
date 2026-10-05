@@ -7,6 +7,7 @@ import StoryDetails from "./pages/StoryDetails.jsx";
 import ChapterPage from "./pages/ChapterPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import { useTheme } from "./hooks/useTheme.js";
+import { trackPageView } from "./utils/analytics.js";
 
 /** Scroll to the top whenever the route path changes (e.g. next chapter). */
 function ScrollToTop() {
@@ -18,12 +19,22 @@ function ScrollToTop() {
   return null;
 }
 
+/** Sends a page view to Google Analytics on every route change (path only, not search keystrokes). */
+function RouteTracker() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   useTheme(); // applies the saved theme to <html> on load
 
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <RouteTracker />
       <div className="flex min-h-dvh flex-col">
         <Header />
         <main className="flex-1">

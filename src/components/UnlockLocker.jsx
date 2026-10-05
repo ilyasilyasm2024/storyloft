@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CLICKS_TO_UNLOCK } from "../config.js";
+import { trackEvent } from "../utils/analytics.js";
 
 /**
  * Overlay that hides a locked chapter until the reader clicks "Unlock" N times.
@@ -7,8 +8,9 @@ import { CLICKS_TO_UNLOCK } from "../config.js";
  * at 0 it calls `onUnlock`, and the parent persists the unlocked state.
  *
  * Give it a `key` per chapter so the counter resets when the chapter changes.
+ * `eventParams` (story/chapter info) is attached to the analytics events.
  */
-export default function UnlockLocker({ directLink, onUnlock, requiredClicks = CLICKS_TO_UNLOCK }) {
+export default function UnlockLocker({ directLink, onUnlock, eventParams, requiredClicks = CLICKS_TO_UNLOCK }) {
   const [remaining, setRemaining] = useState(requiredClicks);
   const completed = requiredClicks - remaining;
 
@@ -19,7 +21,11 @@ export default function UnlockLocker({ directLink, onUnlock, requiredClicks = CL
 
     const next = remaining - 1;
     setRemaining(next);
-    if (next <= 0) onUnlock();
+    trackEvent("unlock_click", { ...eventParams, click_number: requiredClicks - next });
+    if (next <= 0) {
+      trackEvent("chapter_unlocked", eventParams);
+      onUnlock();
+    }
   };
 
   return (

@@ -1,6 +1,8 @@
 import { Link } from "react-router";
+import { useDocumentTitle } from "../hooks/useDocumentTitle.js";
 
 export default function NotFound({ message = "هذه الصفحة غير موجودة." }) {
+  useDocumentTitle("صفحة غير موجودة");
   return (
     <div className="mx-auto max-w-md px-4 py-24 text-center">
       <p className="text-5xl">📖</p>

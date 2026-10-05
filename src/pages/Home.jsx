@@ -4,12 +4,14 @@ import SearchBar from "../components/SearchBar.jsx";
 import GenreFilter from "../components/GenreFilter.jsx";
 import StoryCard from "../components/StoryCard.jsx";
 import { getAllGenres, stories } from "../data/storiesData.js";
+import { useDocumentTitle } from "../hooks/useDocumentTitle.js";
 
 /** "قصة واحدة" / "قصتان" / "3 قصص" / "11 قصة" — Arabic counting rules. */
 const storyCount = (n) => (n === 1 ? "قصة واحدة" : n === 2 ? "قصتان" : n <= 10 ? `${n} قصص` : `${n} قصة`);
 
 export default function Home() {
   // Search + genre live in the URL (?q=&genre=) so they survive Back navigation.
+  useDocumentTitle(null);
   const [params, setParams] = useSearchParams();
   const query = params.get("q") ?? "";
   const genre = params.get("genre") ?? "All";

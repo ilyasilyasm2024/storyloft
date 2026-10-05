@@ -7,10 +7,12 @@ import NotFound from "./NotFound.jsx";
 import { getStoryById, getSuggestedStories } from "../data/storiesData.js";
 import { FREE_CHAPTER_COUNT } from "../config.js";
 import { chapterPath } from "../utils/chapters.js";
+import { useDocumentTitle } from "../hooks/useDocumentTitle.js";
 
 export default function StoryDetails() {
   const { storyId } = useParams();
   const story = getStoryById(storyId);
+  useDocumentTitle(story ? story.title : "صفحة غير موجودة");
   if (!story) return <NotFound message="لم نجد هذه القصة." />;
 
   // Only reserve a sidebar column when there is something to suggest.

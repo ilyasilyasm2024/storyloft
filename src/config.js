@@ -15,3 +15,12 @@ export const FREE_CHAPTER_COUNT = 4;
 
 /** How many "Unlock Chapter" clicks a locked chapter requires. */
 export const CLICKS_TO_UNLOCK = 3;
+
+/** Site name, used in browser tab titles. */
+export const SITE_NAME = "Storyloft";
+
+/**
+ * Google Analytics 4 measurement ID. Set to "" to turn tracking off.
+ * Tracking only runs in production builds (the deployed site), never in `npm run dev`.
+ */
+export const GA_MEASUREMENT_ID = "G-X6EW2NXRWF";

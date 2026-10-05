@@ -6,6 +6,7 @@ import SuggestedStories from "./SuggestedStories.jsx";
 import { useFontSize } from "../hooks/useReaderPrefs.js";
 import { useUnlockedChapters } from "../hooks/useUnlockedChapters.js";
 import { chapterPath, splitParagraphs } from "../utils/chapters.js";
+import { trackEvent } from "../utils/analytics.js";
 
 /**
  * The reading interface.
@@ -31,6 +32,21 @@ export default function ReaderView({ story, chapterNumber, locked, children }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [navigate, story.id, chapterNumber, total]);
+
+  // Analytics: fire chapter_complete once when the reader scrolls past 90% of an open chapter.
+  useEffect(() => {
+    if (locked) return;
+    let sent = false;
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (!sent && max > 0 && window.scrollY / max >= 0.9) {
+        sent = true;
+        trackEvent("chapter_complete", { story_id: story.id, story_title: story.title, chapter_number: chapterNumber });
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [locked, story.id, story.title, chapterNumber]);
 
   const textClass = "font-serif leading-[2.1] text-stone-800 dark:text-stone-200";
 
