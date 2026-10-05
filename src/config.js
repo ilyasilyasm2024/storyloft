@@ -1,8 +1,10 @@
 /**
  * Global app configuration.
- * Replace ADSTERRA_DIRECT_LINK with your own monetization (direct link) URL.
+ *
+ * ADSTERRA_DIRECT_LINK is the smart link opened in a new tab on each "Unlock" click.
+ * It is public by nature (the browser opens it), so it lives here, not in .env.
  */
-export const ADSTERRA_DIRECT_LINK = "https://your-direct-link-url.com";
+export const ADSTERRA_DIRECT_LINK = "https://asiafilm.org/4/f4e48e43684000a4801a658365ad7036";
 
 /** Every story must contain exactly this many chapters. */
 export const CHAPTERS_PER_STORY = 12;
