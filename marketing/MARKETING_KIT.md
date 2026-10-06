@@ -1,7 +1,7 @@
 # Kit dyal l-marketing — "بنت الخدّامة"
 
 Kolchi hna jahez: copier/coller.
-**Bdel `SITE` b l-lien dyal l-site dyalek** (b7al `https://storyloft.vercel.app`).
+L-lien dyal l-site: **https://www.storyloft.it.com**
 
 > 💡 Mli tpartagi lien dyal chi chapitre, Facebook w WhatsApp ghadi y-weriw tswira khassa
 > b 3onwan dyal dak l-chapitre. Kolchi wajed.
@@ -19,14 +19,14 @@ Kolchi hna jahez: copier/coller.
   فصل يشدّك للي بعده… وأول 4 فصول من كل قصة مجانية 🤍
   ⬇️ اقرأ الآن
   ```
-- **Bouton:** "Learn more" → `SITE`
+- **Bouton:** "Learn more" → `https://www.storyloft.it.com`
 - **Tswira dyal l-profil:** l-logo (carré orange m3a ktab)
 - **Couverture:** `public/og/bint-elkhaddama.jpg`
 
 ### TikTok + Instagram
 - **Smiya:** `storyloft.ar`
 - **Bio:** `روايات عربية 📖 الجزء الجاي في اللينك 👇`
-- **Lien f l-bio:** `SITE/story/bint-elkhaddama`
+- **Lien f l-bio:** `https://www.storyloft.it.com/story/bint-elkhaddama`
 
 ### Telegram channel
 - **Smiya:** `Storyloft | روايات`
@@ -58,7 +58,7 @@ Facebook kay9ll l-wousoul dyal l-posts li fihom liens.
 
 👇 الرواية كاملة في أول تعليق
 ```
-**Awal commentaire:** `📖 اقرأ الفصل الأول من هنا 👈 SITE/story/bint-elkhaddama/chapter/1`
+**Awal commentaire:** `📖 اقرأ الفصل الأول من هنا 👈 https://www.storyloft.it.com/story/bint-elkhaddama/chapter/1`
 
 ### Post 2 — Chapitre 1 (nhar 2)
 
@@ -79,7 +79,7 @@ Facebook kay9ll l-wousoul dyal l-posts li fihom liens.
 #بنت_الخدامة الفصل الأول ✨
 👇 التكملة في أول تعليق
 ```
-**Awal commentaire:** `الفصل الأول كامل 👈 SITE/story/bint-elkhaddama/chapter/1`
+**Awal commentaire:** `الفصل الأول كامل 👈 https://www.storyloft.it.com/story/bint-elkhaddama/chapter/1`
 
 ### Post 3 — Chapitre 2 (nhar 3)
 
@@ -99,7 +99,7 @@ Facebook kay9ll l-wousoul dyal l-posts li fihom liens.
 #بنت_الخدامة الفصل التاني
 👇 اقرأ الفصل في أول تعليق
 ```
-**Awal commentaire:** `الفصل التاني 👈 SITE/story/bint-elkhaddama/chapter/2`
+**Awal commentaire:** `الفصل التاني 👈 https://www.storyloft.it.com/story/bint-elkhaddama/chapter/2`
 
 ### Post 4 — Chapitre 3 (nhar 4)
 
@@ -119,7 +119,7 @@ Facebook kay9ll l-wousoul dyal l-posts li fihom liens.
 #بنت_الخدامة الفصل التالت
 👇 التكملة في أول تعليق
 ```
-**Awal commentaire:** `الفصل التالت 👈 SITE/story/bint-elkhaddama/chapter/3`
+**Awal commentaire:** `الفصل التالت 👈 https://www.storyloft.it.com/story/bint-elkhaddama/chapter/3`
 
 ### Post 5 — Chapitre 4 (nhar 5) ⭐ a9wa post, 7it men b3do kaybda l-locker
 
@@ -142,7 +142,7 @@ Facebook kay9ll l-wousoul dyal l-posts li fihom liens.
 #بنت_الخدامة الفصل الرابع 🔥
 👇 اعرف في أول تعليق
 ```
-**Awal commentaire:** `الفصل الرابع 👈 SITE/story/bint-elkhaddama/chapter/4`
+**Awal commentaire:** `الفصل الرابع 👈 https://www.storyloft.it.com/story/bint-elkhaddama/chapter/4`
 
 ### Posts men b3d (nhar 6, 7…)
 - **Sondage:** `مين في رأيكم اللي حط العقد في شنطة فاطمة؟ 🤔 اكتبوا توقعاتكم 👇`
@@ -220,7 +220,7 @@ Bach t-dir s-sowt: CapCut → Text → **Text to speech** (kayn sowt 3arbi), wla
 وتكتشف إن البيت ده نفسه سرق من أمها كل حاجة من عشرين سنة.
 
 ✨ أول 4 فصول مجانية
-👈 SITE/story/bint-elkhaddama
+👈 https://www.storyloft.it.com/story/bint-elkhaddama
 ```
 **Partagi l-lien dyal l-channel** f l-akhir dyal kol post Facebook: `تابعونا على تليجرام عشان توصلكم القصص الجديدة 👈 t.me/...`
 
